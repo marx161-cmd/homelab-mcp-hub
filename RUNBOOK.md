@@ -6,14 +6,14 @@ Quick reference for indexing, searching, and maintaining the three knowledge col
 
 ## What this is
 
-Two separate RAG systems live in the homelab — don't confuse them:
+Two retrieval consumers share this one indexed corpus:
 
-| System | Where | How it's used |
+| Consumer | Where | How it's used |
 |---|---|---|
-| **mcp-hub vector store** (this) | port 8765 | Kai/Claude calls `vector_search` as an explicit MCP tool. The AI decides to search and sees the results. |
-| **linter-lm context injection** | port 8099 | Invisible. Every prompt is silently prefixed with matching chunks before it reaches the LLM. Model never knows. |
+| **mcp-hub** (this) | port 8765 | Kai/Claude calls `vector_search` as an explicit MCP tool. The AI decides to search and sees results. |
+| **linter-lm** | port 8099 | Invisible injection. Every prompt is silently prefixed with matching chunks before the LLM sees it. Model never knows. |
 
-Both use the same iGPU Qwen3-Embedding-0.6B server (port 18084). They have completely separate databases and serve different purposes.
+Both use the same iGPU Qwen3-Embedding-0.6B server (port 18084) and the same ChromaDB at `/home/comrade/.local/share/mcp-hub/chroma`. Index once, two consumers benefit automatically.
 
 ## What gets indexed
 
