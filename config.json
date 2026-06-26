@@ -1,0 +1,32 @@
+{
+  "bind_host": "100.108.8.60",
+  "port": 8765,
+  "mcp_path": "/mcp",
+  "searxng_search_url": "https://comintern.taile6163a.ts.net:8444/search",
+  "searxng_engines": "duckduckgo",
+  "homelab_root": "/home/comrade/homelab",
+  "bin_dir": "/home/comrade/bin",
+  "call_log_path": "/home/comrade/logs/mcp-calls.jsonl",
+  "snapshot_root": "/root/Documents",
+  "snapshot_preview_chars": 12000,
+  "chroma_dir": "/home/comrade/.local/share/mcp-hub/chroma",
+  "vector_collection": "homelab_knowledge",
+  "embedding_backend": "llama-server",
+  "embedding_model": "qwen3-embed-0.6b",
+  "embedding_device": "cpu",
+  "embedding_batch_size": 8,
+  "embedding_unload_cooldown_seconds": 30,
+  "ollama_url": "http://127.0.0.1:18084",
+  "indexed_roots": ["/home/comrade/homelab", "/home/comrade/bin"],
+  "vector_max_file_bytes": 1500000,
+  "vector_max_chunk_chars": 3500,
+  "vector_chunk_overlap_lines": 2,
+  "vector_incremental_enabled": true,
+  "vector_btrfs_subvolume": "/home",
+  "vector_state_path": "/home/comrade/.local/share/mcp-hub/index-state.json",
+  "vector_collections": [
+    {"name": "homelab", "roots": ["/home/comrade/homelab"]},
+    {"name": "bin",     "roots": ["/home/comrade/bin"]},
+    {"name": "notes",   "roots": ["/home/comrade/Obsidian/Vault"]}
+  ]
+}

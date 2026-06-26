@@ -1,0 +1,14 @@
+[Unit]
+Description=Homelab MCP hub for Kai
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/comrade/homelab/mcp-hub
+Environment=HOMELAB_MCP_CONFIG=/home/comrade/homelab/mcp-hub/config.json
+ExecStart=/home/comrade/comfyui-gpu/.venv/bin/python /home/comrade/homelab/mcp-hub/server.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

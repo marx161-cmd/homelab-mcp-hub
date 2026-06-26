@@ -1,0 +1,8 @@
+[Unit]
+Description=Homelab MCP vector index refresh
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/comrade/homelab/mcp-hub
+Environment=HOMELAB_MCP_CONFIG=/home/comrade/homelab/mcp-hub/config.json
+ExecStart=/home/comrade/comfyui-gpu/.venv/bin/python /home/comrade/homelab/mcp-hub/indexer.py --incremental
